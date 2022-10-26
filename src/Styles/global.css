@@ -16,9 +16,10 @@ body {
   background: #222;
 }
 
-input {
+input, .container-task{
   background: #444;
   color: #eee;
+  font-size: 1.6rem;
 }
 
 input::placeholder {

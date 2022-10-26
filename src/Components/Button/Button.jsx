@@ -1,10 +1,11 @@
 import '../../Styles/global.css'
 import './button.css'
 
-export function Button({children}) {
+export function Button({children, onClick}) {
   return (
-    <button className='button'>
-      {children}
+    <button 
+      className='button'
+      onClick={onClick}> {children}
     </button>
   )
 }
