@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           element={<App />}>
         </Route>
         <Route
-          path='/details'
+          path='/details/:taskDetails'
           element={<DetailsTask/>}>
         </Route>
       </Routes>

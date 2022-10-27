@@ -1,0 +1,15 @@
+.content-text {
+  color: #eee;
+  background: #444;
+
+  text-align: left;
+  border-radius: .4rem;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+}
+
+.content-text h2 {
+  font-size: 2rem;
+  margin-bottom: .5rem;
+  color: chartreuse;
+}

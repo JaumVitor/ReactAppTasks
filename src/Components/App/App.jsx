@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 import { Button } from '../Button/Button'
 import { Task } from '../Task/Task'
 
-import '../../Styles/global.css'
 import '../../Styles/app.css'
 
 export function App() {
