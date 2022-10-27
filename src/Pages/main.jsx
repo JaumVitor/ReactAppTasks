@@ -1,9 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import { App } from '../Components/App/App'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { DetailsTask } from '../Components/DetailsTask/DetailsTask'
 
 ReactDOM.createRoot(document.getElementById('root')).render(

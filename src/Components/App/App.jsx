@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
-import { Routes, Route } from 'react-router-dom'
 
 import { Button } from '../Button/Button'
 import { Task } from '../Task/Task'
@@ -63,40 +62,33 @@ export function App() {
   }
 
   return (
-    <Routes>
-      <Route
-        path='/'
-        element={ 
-          <div className='container'>
-            <h1>Minhas tarefas</h1>
-            <div className="input-tasks">
-              <input
-                type="text"
-                value={nameTask}
-                placeholder='Digite a tarefa'
-                onChange={handleAddTask}
-              />
-              <Button
-                onClick={onClick}> Adicionar
-              </Button>
-            </div>
-            <div className="tasks-area">
-              {
-                arrayTasks.map( (task, index) => (
-                  <Task
-                    key={index}
-                    id={task.id}
-                    title={task.title}
-                    completed={task.completed}
-                    handleCompletedTask={handleCompletedTask}
-                    handleCloseTask={handleCloseTask}
-                  />
-                ))
-              }
-            </div>
-          </div>
-        }>
-      </Route>
-    </Routes>
+    <div className='container'>
+      <h1>Minhas tarefas</h1>
+      <div className="input-tasks">
+        <input
+          type="text"
+          value={nameTask}
+          placeholder='Digite a tarefa'
+          onChange={handleAddTask}
+        />
+        <Button
+          onClick={onClick}> Adicionar
+        </Button>
+      </div>
+      <div className="tasks-area">
+        {
+          arrayTasks.map( (task, index) => (
+            <Task
+              key={index}
+              id={task.id}
+              title={task.title}
+              completed={task.completed}
+              handleCompletedTask={handleCompletedTask}
+              handleCloseTask={handleCloseTask}
+            />
+          ))
+        }
+      </div>
+    </div>
   )
 }
