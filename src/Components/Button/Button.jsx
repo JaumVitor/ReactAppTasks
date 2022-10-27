@@ -1,5 +1,5 @@
 import '../../Styles/global.css'
-import './button.css'
+import '../../Styles/button.css'
 
 export function Button({children, onClick}) {
   return (

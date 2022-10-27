@@ -2,7 +2,7 @@ import { CgClose as Close} from "react-icons/cg";
 import { AiOutlineInfoCircle as Info } from 'react-icons/ai'
 
 import '../../Styles/global.css'
-import './task.css'
+import '../../Styles/task.css'
 
 export function Task ({ id, title, completed, handleCompletedTask, handleCloseTask }) {
   return (
