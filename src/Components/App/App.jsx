@@ -9,7 +9,23 @@ import { Task } from '../Task/Task'
 
 export function App() {
   const [ nameTask, setNameTask ] = useState('')
-  const [ arrayTasks, setArrayTasks ] = useState([])
+  const [ arrayTasks, setArrayTasks ] = useState([
+    {
+      id: uuidv4(),
+      title: 'Tarefa 1',
+      completed: false
+    },
+    {
+      id: uuidv4(),
+      title: 'Tarefa 2',
+      completed: false
+    },
+    {
+      id: uuidv4(),
+      title: 'Tarefa 3',
+      completed: false
+    }
+  ])
 
   // Fuction que chama hook para alterar a variavel task
   const handleAddTask = (e => {
@@ -29,13 +45,19 @@ export function App() {
 
   // Se clicou na task, enviar todo array e altera somente o completed da mesma
   // Caso contrario, não altera nada em nenhuma task
-  const handleCompletedTask = (keyId) => {
+  const handleCompletedTask = (id) => {
     const newArrayTasks = arrayTasks.map( taskMap => {
-      if (taskMap.id === keyId) {
+      if (taskMap.id === id) {
         return {...taskMap, completed: !taskMap.completed}
       }
       return taskMap
     }) 
+    setArrayTasks(newArrayTasks)
+  }
+
+  const handleCloseTask = (id) => {
+    const newArrayTasks = arrayTasks.filter( taskFilter => taskFilter.id !== id )
+
     setArrayTasks(newArrayTasks)
   }
 
@@ -64,6 +86,7 @@ export function App() {
               title={task.title}
               completed={task.completed}
               handleCompletedTask={handleCompletedTask}
+              handleCloseTask={handleCloseTask}
             />
           ))
         }

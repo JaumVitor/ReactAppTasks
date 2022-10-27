@@ -1,5 +1,7 @@
 .container-task {
-  padding: 1.5rem;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: .5rem;
   border-radius: .4rem;
   font-size: 1.4rem;
@@ -7,5 +9,20 @@
   transition: .2s;
 }
 
+.title-task {
+  padding: 1.5rem;
+  width: 100%;
+}
 
+.buttons-task {
+  font-size: 1.6rem;
+  display: flex; 
+  gap: .3rem;
+  padding: 1.5rem;
+  color: chartreuse;
+}
 
+.buttons-task > :nth-child(1):hover, 
+.buttons-task > :nth-child(2):hover {
+  filter: brightness(0.8);
+}
