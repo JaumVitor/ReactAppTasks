@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { v4 as uuidv4 } from 'uuid';
+import { VscEmptyWindow } from 'react-icons/vsc'
 
 import { Button } from '../Button/Button'
 import { Task } from '../Task/Task'
@@ -25,6 +26,11 @@ export function App() {
       completed: false
     }
   ])
+
+  // Hook pra contar numero de tasks
+  useEffect (() => {
+    document.title = `Temos ${arrayTasks.length} tarefas para fazer`;
+  }, [arrayTasks])
 
   // Fuction que chama hook para alterar a variavel task
   const handleAddTask = (e => {
@@ -76,6 +82,7 @@ export function App() {
       </div>
       <div className="tasks-area">
         {
+          arrayTasks.length != 0 ? 
           arrayTasks.map( (task, index) => (
             <Task
               key={index}
@@ -85,7 +92,7 @@ export function App() {
               handleCompletedTask={handleCompletedTask}
               handleCloseTask={handleCloseTask}
             />
-          ))
+          )) : <p className='is-empty'> <VscEmptyWindow /> Não existe tarefas a fazer</p>
         }
       </div>
     </div>
